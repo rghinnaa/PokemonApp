@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/main_fragment">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.assignment.pokemonapp.ui.main.MainFragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/actionDetailFragment"
+            app:destination="@id/detail_fragment" />
+
+        <action
+            android:id="@+id/actionCaughtPokemonFragment"
+            app:destination="@id/caught_pokemon_fragment"/>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="com.assignment.pokemonapp.ui.detail.DetailFragment"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="pokemonId"
+            app:argType="integer"
+            android:defaultValue="1" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/caught_pokemon_fragment"
+        android:name="com.assignment.pokemonapp.ui.main.CatchPokemonFragment"
+        tools:layout="@layout/fragment_catch_pokemon">
+
+        <action
+            android:id="@+id/actionDetailFragment"
+            app:destination="@id/detail_fragment" />
+
+    </fragment>
+
+</navigation>
